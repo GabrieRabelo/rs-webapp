@@ -1,6 +1,5 @@
 import { Folder, User, Terminal, FileText } from 'lucide-react';
 
-export const WALLPAPER_URL = 'https://i.ibb.co/pBHm4xJx/wallpaper.jpg';
 export const LOGO_URL = 'https://www.tibiawiki.com.br/images/f/fd/Slime_%28Old%29.gif';
 
 export const APPS = [

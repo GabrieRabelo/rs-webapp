@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { APPS, WALLPAPER_URL } from './constants/apps';
+import { APPS } from './constants/apps';
+import wallpaper from './assets/wallpaper.png';
 import Navbar from './components/Navbar';
 import Dock from './components/Dock';
 import StatusBar from './components/StatusBar';
@@ -27,7 +28,7 @@ export default function App() {
 
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('${WALLPAPER_URL}')` }}
+        style={{ backgroundImage: `url(${wallpaper})` }}
       />
       <div className="absolute inset-0 z-1 bg-black/10 backdrop-brightness-75" />
 
