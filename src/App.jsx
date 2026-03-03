@@ -7,10 +7,12 @@ import Dock from './components/Dock';
 import StatusBar from './components/StatusBar';
 import DesktopIcon from './components/DesktopIcon';
 import Window from './components/Window';
+import { useDesktopGrid } from './hooks/useDesktopGrid';
 
 export default function App() {
   const [openApps, setOpenApps] = useState([]);
   const [focusedApp, setFocusedApp] = useState(null);
+  const { containerRef, positions, moveIcon } = useDesktopGrid(APPS);
 
   const openApp = (appId) => {
     setOpenApps(prev => prev.includes(appId) ? prev : [...prev, appId]);
@@ -32,10 +34,20 @@ export default function App() {
       />
       <div className="absolute inset-0 z-1 bg-black/10 backdrop-brightness-75" />
 
-      <main className="relative z-10 w-full h-[calc(100vh-80px)] pt-18 md:pt-20 px-4 md:px-8 grid grid-cols-3 sm:grid-cols-4 md:grid-flow-col md:grid-rows-5 gap-6 md:gap-6 justify-items-start content-start">
-        {APPS.map(app => (
-          <DesktopIcon key={app.id} app={app} onOpen={openApp} />
-        ))}
+      <main ref={containerRef} className="relative z-10 w-full h-[calc(100vh-80px)]">
+        {APPS.map(app => {
+          const pos = positions[app.id] ?? { x: 16, y: 80 };
+          return (
+            <DesktopIcon
+              key={app.id}
+              app={app}
+              x={pos.x}
+              y={pos.y}
+              onOpen={openApp}
+              onMoveEnd={moveIcon}
+            />
+          );
+        })}
 
         <AnimatePresence>
           {openApps.map((appId, index) => (
