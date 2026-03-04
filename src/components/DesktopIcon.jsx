@@ -53,12 +53,22 @@ export default function DesktopIcon({ app, onOpen, x, y, onMoveEnd }) {
       onDragStart={() => { dragging.current = true; }}
       onDragEnd={handleDragEnd}
       whileDrag={{ scale: 1.08, zIndex: 50 }}
-      className="w-20 md:w-24 h-24 flex flex-col items-center justify-center gap-2 rounded-xl select-none group touch-none active:cursor-grabbing"
+      className="w-20 md:w-24 h-24 flex flex-col items-center justify-center gap-2 select-none group touch-none active:cursor-grabbing"
     >
-      <div className={cn(app.color, 'p-3 rounded-2xl shadow-lg')}>
-        <app.icon className="w-7 h-7 md:w-8 md:h-8 text-white" />
+      <div
+        className={cn(app.color, 'p-3')}
+        style={{ boxShadow: '3px 3px 0px rgba(0,0,0,0.6), inset -2px -2px 0px rgba(0,0,0,0.25), inset 2px 2px 0px rgba(255,255,255,0.25)' }}
+      >
+        <app.icon className="w-7 h-7 md:w-8 md:h-8 text-white" style={{ imageRendering: 'pixelated' }} />
       </div>
-      <span className="text-[10px] md:text-xs font-bold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] text-center px-1">
+      <span
+        className="text-white text-center px-1 leading-tight"
+        style={{
+          fontFamily: "'Press Start 2P', monospace",
+          fontSize: '7px',
+          textShadow: '1px 1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000, -1px -1px 0px #000',
+        }}
+      >
         {app.title}
       </span>
     </motion.button>

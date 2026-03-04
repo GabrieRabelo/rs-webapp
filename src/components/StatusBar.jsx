@@ -9,8 +9,11 @@ export default function StatusBar() {
   }, []);
 
   return (
-    <div className="fixed top-16 right-6 z-[60] hidden md:block">
-      <div className="px-3 py-1 bg-black/20 backdrop-blur-md rounded-full border border-white/10 text-[10px] font-bold text-white shadow-lg">
+    <div className="fixed top-10 right-6 z-[60] hidden md:block">
+      <div
+        className="px-3 py-1 bg-black/50 border border-white/20 text-white"
+        style={{ fontFamily: "'Press Start 2P', monospace", fontSize: '8px', boxShadow: '2px 2px 0px rgba(0,0,0,0.7)' }}
+      >
         {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
       </div>
     </div>

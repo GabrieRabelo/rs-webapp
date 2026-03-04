@@ -34,7 +34,7 @@ export default function App() {
       />
       <div className="absolute inset-0 z-1 bg-black/10 backdrop-brightness-75" />
 
-      <main ref={containerRef} className="relative z-10 w-full h-[calc(100vh-80px)]">
+      <main ref={containerRef} className="relative z-10 w-full h-[calc(100vh-40px)]">
         {APPS.map(app => {
           const pos = positions[app.id] ?? { x: 16, y: 80 };
           return (
