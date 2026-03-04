@@ -22,10 +22,12 @@ export default function Navbar() {
 
       <div className="flex items-center gap-4">
         <button
-          className="bg-amber-400 text-black px-3 py-1 text-[7px] hover:bg-amber-300 transition-colors active:translate-x-[2px] active:translate-y-[2px]"
+          disabled
+          title="Work in progress..."
+          className="bg-amber-400/50 text-black/40 px-3 py-1 text-[7px] cursor-not-allowed"
           style={{
             fontFamily: "'Press Start 2P', monospace",
-            boxShadow: '3px 3px 0px rgba(0,0,0,0.7)',
+            boxShadow: '3px 3px 0px rgba(0,0,0,0.3)',
           }}
         >
           Site Version
