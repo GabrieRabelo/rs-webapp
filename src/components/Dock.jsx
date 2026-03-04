@@ -43,8 +43,8 @@ export default function Dock({ apps, openApps, onOpen }) {
         <a href="https://linkedin.com/in/rabelito" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" className="p-2 text-zinc-400 hover:text-white transition-colors">
           <Linkedin size={22} />
         </a>
-        <div className="w-px h-6 bg-white/10 mx-1" />
-        <div className="px-2 text-white">
+        <div className="hidden md:block w-px h-6 bg-white/10 mx-1" />
+        <div className="hidden md:flex px-2 text-white">
           <Clock />
         </div>
       </div>

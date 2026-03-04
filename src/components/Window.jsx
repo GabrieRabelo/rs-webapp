@@ -65,8 +65,15 @@ export default function Window({ app, onClose, isFocused, onFocus, index = 0 }) 
           isBrowserApp ? 'md:w-[650px] md:h-[550px]' : 'md:w-full md:max-w-md',
         )}
       >
+        {/* Mobile drag handle */}
+        {isMobile && (
+          <div className="flex justify-center pt-2 pb-1 shrink-0">
+            <div className="w-10 h-1 rounded-full bg-white/30" />
+          </div>
+        )}
+
         {/* Title Bar */}
-        <div className="flex items-center justify-between px-4 py-4 md:py-3 bg-white/5 border-b border-white/5 shrink-0">
+        <div className="flex items-center justify-between px-4 py-3 md:py-3 bg-white/5 border-b border-white/5 shrink-0">
           <div className="flex items-center gap-3 md:gap-2">
             {isMobile && (
               <button onClick={onClose} className="p-1">
