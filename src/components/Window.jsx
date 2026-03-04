@@ -9,14 +9,14 @@ function BrowserBar() {
   return (
     <div className="flex items-center gap-3 px-4 py-2 bg-zinc-800/50 border-b border-white/5 shrink-0 overflow-x-auto">
       <div className="hidden md:flex gap-2">
-        <ArrowLeft size={14} className="text-zinc-500" />
-        <ArrowRight size={14} className="text-zinc-500" />
+        <ArrowLeft size={14} className="text-zinc-600 cursor-not-allowed opacity-40" />
+        <ArrowRight size={14} className="text-zinc-600 cursor-not-allowed opacity-40" />
       </div>
       <div className="flex-1 bg-black/30 rounded-md px-3 py-1 flex items-center gap-2 border border-white/5 text-[10px] md:text-[11px] text-zinc-400 truncate">
         <Globe size={12} className="text-zinc-600" />
         <span className="truncate">rabelosolutions.com/resume</span>
       </div>
-      <RotateCw size={14} className="text-zinc-500" />
+      <RotateCw size={14} className="text-zinc-600 cursor-not-allowed opacity-40" />
     </div>
   );
 }
@@ -47,7 +47,7 @@ export default function Window({ app, onClose, isFocused, onFocus, index = 0 }) 
   return (
     <motion.div
       ref={constraintsRef}
-      className="absolute inset-0 top-16 pointer-events-none"
+      className="absolute inset-0 top-10 pointer-events-none"
     >
       <motion.div
         drag={!isMobile}
@@ -78,9 +78,9 @@ export default function Window({ app, onClose, isFocused, onFocus, index = 0 }) 
           </div>
           {!isMobile && (
             <div className="flex items-center gap-2">
-              <button className="p-1 hover:bg-white/5 rounded text-zinc-500"><Minus size={14} /></button>
-              <button className="p-1 hover:bg-white/5 rounded text-zinc-500"><Maximize2 size={14} /></button>
-              <button onClick={onClose} className="p-1 hover:bg-red-500/20 hover:text-red-400 rounded text-zinc-500"><X size={14} /></button>
+              <button aria-label="Minimize" title="Minimize" className="p-1 rounded text-zinc-600 opacity-40 cursor-not-allowed"><Minus size={14} /></button>
+              <button aria-label="Maximize" title="Maximize" className="p-1 rounded text-zinc-600 opacity-40 cursor-not-allowed"><Maximize2 size={14} /></button>
+              <button aria-label="Close" title="Close" onClick={onClose} className="p-1 hover:bg-red-500/20 hover:text-red-400 rounded text-zinc-500 transition-colors"><X size={14} /></button>
             </div>
           )}
         </div>

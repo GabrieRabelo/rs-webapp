@@ -52,7 +52,9 @@ export default function DesktopIcon({ app, onOpen, x, y, onMoveEnd }) {
       onPointerUp={handlePointerUp}
       onDragStart={() => { dragging.current = true; }}
       onDragEnd={handleDragEnd}
+      whileHover={{ scale: 1.06 }}
       whileDrag={{ scale: 1.08, zIndex: 50 }}
+      aria-label={app.title}
       className="w-20 md:w-24 h-24 flex flex-col items-center justify-center gap-2 select-none group touch-none active:cursor-grabbing"
     >
       <div

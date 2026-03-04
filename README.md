@@ -43,7 +43,6 @@ src/
     Navbar.jsx
     Dock.jsx
     DesktopIcon.jsx
-    StatusBar.jsx
     Window.jsx
   App.jsx
   index.css

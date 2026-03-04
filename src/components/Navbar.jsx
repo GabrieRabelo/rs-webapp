@@ -1,5 +1,4 @@
 import { Menu } from 'lucide-react';
-import { LOGO_URL } from '../constants/apps';
 
 export default function Navbar() {
   return (
@@ -7,10 +6,10 @@ export default function Navbar() {
       <div className="flex items-center gap-2 cursor-pointer group">
         <div className="transition-transform group-hover:scale-125 duration-300">
           <img
-            src={LOGO_URL}
-            alt="Slime Logo"
-            className="w-7 h-7 object-contain drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]"
-            onError={(e) => { e.target.style.display = 'none'; }}
+            src="/logo.svg"
+            alt="Logo"
+            className="w-7 h-7 object-contain"
+            style={{ imageRendering: 'pixelated' }}
           />
         </div>
         <span
@@ -31,7 +30,7 @@ export default function Navbar() {
         >
           Site Version
         </button>
-        <button className="md:hidden text-zinc-400 p-1">
+        <button aria-label="Menu" className="md:hidden text-zinc-400 p-1">
           <Menu size={24} />
         </button>
       </div>

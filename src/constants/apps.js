@@ -1,7 +1,5 @@
 import { Folder, User, Terminal, FileText } from 'lucide-react';
 
-export const LOGO_URL = 'https://www.tibiawiki.com.br/images/f/fd/Slime_%28Old%29.gif';
-
 export const APPS = [
   {
     id: 'about',
@@ -24,7 +22,7 @@ export const APPS = [
     icon: Folder,
     color: 'bg-amber-400',
     type: 'default',
-    content: 'Explore my portfolio of microservices and React applications on GitHub.',
+    content: 'Most of my work lives behind bank-grade firewalls — classified! 🔒 For the stuff I can show, check GitHub → GabrieRabelo for experimental projects and open-source tinkering.',
   },
   {
     id: 'terminal',
