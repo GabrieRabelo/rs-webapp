@@ -1,5 +1,19 @@
+import { useState, useEffect } from 'react';
 import { Github } from 'lucide-react';
 import { cn } from '../lib/utils';
+
+function Clock() {
+  const [time, setTime] = useState(new Date());
+  useEffect(() => {
+    const id = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: '8px' }}>
+      {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+    </span>
+  );
+}
 
 export default function Dock({ apps, openApps, onOpen }) {
   return (
@@ -24,6 +38,10 @@ export default function Dock({ apps, openApps, onOpen }) {
         <a href="https://github.com/GabrieRabelo" target="_blank" rel="noopener noreferrer" className="p-2 text-zinc-400 hover:text-white">
           <Github size={22} />
         </a>
+        <div className="w-px h-6 bg-white/10 mx-1" />
+        <div className="px-2 text-white">
+          <Clock />
+        </div>
       </div>
     </div>
   );

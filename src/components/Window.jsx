@@ -14,7 +14,7 @@ function BrowserBar() {
       </div>
       <div className="flex-1 bg-black/30 rounded-md px-3 py-1 flex items-center gap-2 border border-white/5 text-[10px] md:text-[11px] text-zinc-400 truncate">
         <Globe size={12} className="text-zinc-600" />
-        <span className="truncate">rabelosolutions.com/curriculo</span>
+        <span className="truncate">rabelosolutions.com/resume</span>
       </div>
       <RotateCw size={14} className="text-zinc-500" />
     </div>
@@ -28,7 +28,7 @@ function WindowContent({ app }) {
     <div className={cn('p-6 text-zinc-300', app.type === 'terminal' ? 'font-mono text-xs md:text-sm' : 'text-sm md:text-base')}>
       {app.type === 'terminal' ? (
         <>
-          <p className="text-green-400">login success: guest</p>
+          <p className="text-green-400">Login successful: guest</p>
           <p className="mt-2">{app.content}</p>
         </>
       ) : (

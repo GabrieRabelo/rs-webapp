@@ -4,7 +4,6 @@ import { APPS } from './constants/apps';
 import wallpaper from './assets/wallpaper.png';
 import Navbar from './components/Navbar';
 import Dock from './components/Dock';
-import StatusBar from './components/StatusBar';
 import DesktopIcon from './components/DesktopIcon';
 import Window from './components/Window';
 import { useDesktopGrid } from './hooks/useDesktopGrid';
@@ -64,7 +63,6 @@ export default function App() {
       </main>
 
       <Dock apps={APPS} openApps={openApps} onOpen={openApp} />
-      <StatusBar />
     </div>
   );
 }
