@@ -9,7 +9,7 @@ function Clock() {
     return () => clearInterval(id);
   }, []);
   return (
-    <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: '8px', textShadow: '1px 1px 0px #000' }}>
+    <span className="text-sm font-medium tabular-nums">
       {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
     </span>
   );

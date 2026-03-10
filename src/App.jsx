@@ -21,18 +21,13 @@ function MobileIcon({ app, onOpen }) {
       className="flex flex-col items-center justify-center gap-2 py-2 active:scale-90 transition-transform"
     >
       <div
-        className={`${app.color} p-3`}
-        style={{ boxShadow: '3px 3px 0px rgba(0,0,0,0.6), inset -2px -2px 0px rgba(0,0,0,0.25), inset 2px 2px 0px rgba(255,255,255,0.25)' }}
+        className={`${app.color} p-3 rounded-2xl shadow-lg shadow-black/50`}
       >
-        <app.icon className="w-8 h-8 text-white" />
+        <app.icon className="w-7 h-7 text-white" />
       </div>
       <span
-        className="text-white text-center px-1 leading-tight"
-        style={{
-          fontFamily: "'Press Start 2P', monospace",
-          fontSize: '7px',
-          textShadow: '1px 1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000, -1px -1px 0px #000',
-        }}
+        className="text-white text-center px-1 leading-tight text-xs font-medium"
+        style={{ textShadow: '0 1px 3px rgba(0,0,0,0.9)' }}
       >
         {app.title}
       </span>

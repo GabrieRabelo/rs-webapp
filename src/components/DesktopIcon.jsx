@@ -11,8 +11,6 @@ export default function DesktopIcon({ app, onOpen, x, y, onMoveEnd }) {
   const dragging = useRef(false);
   const pointerStart = useRef(null);
 
-  // Animate to new grid position when props change (reorder or snap after drop).
-  // mx/my are stable MotionValue refs — safe to include in deps.
   useEffect(() => {
     if (dragging.current) return;
     animate(mx, x, SNAP_SPRING);
@@ -52,24 +50,19 @@ export default function DesktopIcon({ app, onOpen, x, y, onMoveEnd }) {
       onPointerUp={handlePointerUp}
       onDragStart={() => { dragging.current = true; }}
       onDragEnd={handleDragEnd}
-      whileHover={{ scale: 1.06 }}
-      whileDrag={{ scale: 1.08, zIndex: 50 }}
+      whileHover={{ scale: 1.08 }}
+      whileDrag={{ scale: 1.1, zIndex: 50 }}
       aria-label={app.title}
-      className="w-20 md:w-24 h-24 flex flex-col items-center justify-center gap-2 select-none group touch-none active:cursor-grabbing"
+      className="w-18 md:w-20 h-20 flex flex-col items-center justify-center gap-1.5 select-none group touch-none active:cursor-grabbing"
     >
       <div
-        className={cn(app.color, 'p-3')}
-        style={{ boxShadow: '3px 3px 0px rgba(0,0,0,0.6), inset -2px -2px 0px rgba(0,0,0,0.25), inset 2px 2px 0px rgba(255,255,255,0.25)' }}
+        className={cn(app.color, 'p-2.5 rounded-2xl shadow-lg shadow-black/50')}
       >
-        <app.icon className="w-7 h-7 md:w-8 md:h-8 text-white" style={{ imageRendering: 'pixelated' }} />
+        <app.icon className="w-6 h-6 text-white" />
       </div>
       <span
-        className="text-white text-center px-1 leading-tight"
-        style={{
-          fontFamily: "'Press Start 2P', monospace",
-          fontSize: '7px',
-          textShadow: '1px 1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000, -1px -1px 0px #000',
-        }}
+        className="text-white text-center px-1 leading-tight text-[11px] font-medium"
+        style={{ textShadow: '0 1px 3px rgba(0,0,0,0.9)' }}
       >
         {app.title}
       </span>

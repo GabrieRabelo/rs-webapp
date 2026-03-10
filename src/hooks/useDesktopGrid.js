@@ -1,8 +1,8 @@
 import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 
 // Grid cell step sizes (icon size + gap)
-export const STEP_X = 112; // w-24 (96px) + 16px gap
-export const STEP_Y = 128; // h-24 (96px) + 32px gap
+export const STEP_X = 88; // w-20 (80px) + 8px gap
+export const STEP_Y = 96;  // h-20 (80px) + 16px gap
 
 // Grid origin offsets within the main container
 // ORIGIN_Y accounts for the fixed navbar (h-16 = 64px) + breathing room
