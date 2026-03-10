@@ -71,7 +71,7 @@ export default function App() {
 
         {/* Mobile: static home-screen icon grid */}
         {isMobile ? (
-          <div className="grid grid-cols-3 gap-x-4 gap-y-6 px-10 pt-10">
+          <div className="grid grid-cols-3 gap-x-4 gap-y-6 px-10 pt-24">
             {APPS.map(app => (
               <MobileIcon key={app.id} app={app} onOpen={openApp} />
             ))}
