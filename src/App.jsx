@@ -3,7 +3,10 @@ import { AnimatePresence } from 'framer-motion';
 import { APPS } from './constants/apps';
 import wallpaper from './assets/wallpaper.png';
 import wallpaperMobile from './assets/wallpaper-mobile.png';
+import wallpaperNight from './assets/wallpaper-night.png';
+import wallpaperNightMobile from './assets/wallpaper-night-mobile.png';
 import { useIsMobile } from './hooks/useIsMobile';
+import { useIsNight } from './hooks/useIsNight';
 import Navbar from './components/Navbar';
 import Dock from './components/Dock';
 import DesktopIcon from './components/DesktopIcon';
@@ -41,6 +44,7 @@ export default function App() {
   const [openApps, setOpenApps] = useState([]);
   const [focusedApp, setFocusedApp] = useState(null);
   const isMobile = useIsMobile();
+  const isNight = useIsNight();
   const { containerRef, positions, moveIcon } = useDesktopGrid(APPS);
 
   const openApp = (appId) => {
@@ -59,12 +63,12 @@ export default function App() {
 
       {/* Wallpaper */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat hidden md:block"
-        style={{ backgroundImage: `url(${wallpaper})` }}
+        className="absolute inset-0 z-0 bg-cover bg-bottom bg-no-repeat hidden md:block"
+        style={{ backgroundImage: `url(${isNight ? wallpaperNight : wallpaper})` }}
       />
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat md:hidden"
-        style={{ backgroundImage: `url(${wallpaperMobile})` }}
+        className="absolute inset-0 z-0 bg-cover bg-bottom bg-no-repeat md:hidden"
+        style={{ backgroundImage: `url(${isNight ? wallpaperNightMobile : wallpaperMobile})` }}
       />
       <div className="absolute inset-0 z-1 bg-black/10 backdrop-brightness-75" />
 
